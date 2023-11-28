@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    id("co.touchlab.skie") version "0.4.19"
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -28,9 +29,22 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                //put your multiplatform dependencies here
+                implementation(libs.kotlinx.coroutines.core)
             }
         }
+
+        val androidMain by getting {
+            dependencies {
+                implementation(libs.androidx.lifecycle.viewmodel.ktx)
+            }
+        }
+
+        val iosMain by getting {
+            dependencies {
+
+            }
+        }
+
         val commonTest by getting {
             dependencies {
                 implementation(libs.kotlin.test)
