@@ -11,6 +11,7 @@ lifecycleViewmodelKtx = "2.6.2"
 navigationCompose = "2.7.5"
 ktorClient = "2.3.5"
 kotlinxDatetime = "0.4.1"
+koin = "3.4.3"
 
 [libraries]
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
@@ -32,6 +33,10 @@ ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorClient" }
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktorClient" }
 ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktorClient" }
+
+koin-androidx-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 
 
 [plugins]

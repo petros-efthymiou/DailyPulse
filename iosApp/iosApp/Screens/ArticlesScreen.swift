@@ -13,11 +13,11 @@ extension ArticlesScreen {
     
     @MainActor
     class ArticlesViewModelWrapper: ObservableObject {
+        
         let articlesViewModel: ArticlesViewModel
         
-        
         init() {
-            articlesViewModel = ArticlesViewModel()
+            articlesViewModel = ArticlesInjector().articlesViewModel
             articlesState = articlesViewModel.articlesState.value
         }
         

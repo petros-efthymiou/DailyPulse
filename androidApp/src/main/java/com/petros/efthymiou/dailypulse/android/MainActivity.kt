@@ -17,7 +17,6 @@ import com.petros.efthymiou.dailypulse.articles.ArticlesViewModel
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val articlesViewModel : ArticlesViewModel by viewModels()
 
         setContent {
             MyApplicationTheme {
@@ -25,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    AppScaffold(articlesViewModel = articlesViewModel)
+                    AppScaffold()
                 }
             }
         }
