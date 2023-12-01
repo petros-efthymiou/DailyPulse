@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     id("co.touchlab.skie") version "0.4.19"
     kotlin("plugin.serialization") version "1.9.20"
+    alias(libs.plugins.sqlDelight)
 }
 
 @OptIn(org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi::class)
@@ -36,6 +37,7 @@ kotlin {
                 implementation(libs.ktor.serialization.kotlinx.json)
                 implementation(libs.kotlinx.datetime)
                 implementation(libs.koin.core)
+                implementation(libs.sql.coroutines.extensions)
             }
         }
 
@@ -43,12 +45,14 @@ kotlin {
             dependencies {
                 implementation(libs.androidx.lifecycle.viewmodel.ktx)
                 implementation(libs.ktor.client.android)
+                implementation(libs.sql.android.driver)
             }
         }
 
         val iosMain by getting {
             dependencies {
                 implementation(libs.ktor.client.darwin)
+                implementation(libs.sql.native.driver)
             }
         }
 
@@ -65,5 +69,13 @@ android {
     compileSdk = 34
     defaultConfig {
         minSdk = 24
+    }
+}
+
+sqldelight {
+    databases {
+        create(name = "DailyPulseDatabase") {
+            packageName.set("petros.efthymiou.dailypulse.db")
+        }
     }
 }
