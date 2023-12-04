@@ -36,7 +36,7 @@ The UI/Framework layers reside in the native apps, while everything from the Vie
 License
 --------
 ```
-  Copyright (C) 2022 Petros Efthymiou Open Source Project
+  Copyright (C) 2023 Petros Efthymiou Open Source Project
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
